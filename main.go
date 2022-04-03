@@ -21,6 +21,7 @@ func getIp() {
 }
 
 func main() {
+
 	getIp()
 	err := http.ListenAndServe(":81", &webdav.Handler{FileSystem: webdav.Dir("."),
 		LockSystem: webdav.NewMemLS()})
@@ -36,8 +37,8 @@ func main() {
 		Browse:   true,
 	})
 
-	err = app.Listen(":80")
-	if err != nil {
-		log.Fatal(err)
+	err0 := app.Listen(":80")
+	if err0 != nil {
+		log.Fatal(err0)
 	}
 }
